@@ -304,7 +304,11 @@ public class XMLConfiguration implements Configuration {
         return gwcConfig.getServiceInformation();
     }
 
-    private void setDefaultValues(TileLayer layer) {
+    /**
+     * Configuration objects lacking their own defaults can delegate to this
+     * @param layer
+     */
+    public void setDefaultValues(TileLayer layer) {
         // Additional values that can have defaults set
         if (layer.isCacheBypassAllowed() == null) {
             if (gwcConfig.getCacheBypassAllowed() != null) {
@@ -790,7 +794,7 @@ public class XMLConfiguration implements Configuration {
         }
 
         if (rootNode.getNamespaceURI().equals("http://geowebcache.org/schema/1.2.6")) {
-            log.info("Updating configuration from 1.2.6 to 1.3.0");
+            log.info("Updating configuration from 1.2.6 to 1.5.0");
             rootNode = applyTransform(rootNode, "geowebcache_126.xsl").getFirstChild();
         }
 

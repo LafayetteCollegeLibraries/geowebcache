@@ -6,13 +6,13 @@
   <groupId>org.geowebcache</groupId>
   <artifactId>geowebcache</artifactId>
   <packaging>pom</packaging>
-  <version>1.6-SNAPSHOT</version>
+  <version>1.5-SNAPSHOT</version>
   <name>geowebcache</name>
   <url>http://geowebcache.org</url>
 
   <properties>
     <gt.version>11-SNAPSHOT</gt.version>
-    <jts.version>1.12</jts.version>
+    <jts.version>1.13</jts.version>
     <spring.version>3.1.1.RELEASE</spring.version>
     <restlet.version>1.0.8</restlet.version>
     <xstream.version>1.4.3</xstream.version>
@@ -444,23 +444,7 @@
        </links>
       </configuration>
      </plugin>
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <!--descriptorRefs>
-            <descriptorRef>project</descriptorRef>
-          </descriptorRefs-->
-          <descriptors>
-            <descriptor>release/src.xml</descriptor>
-            <descriptor>release/war.xml</descriptor>
-            <descriptor>release/doc.xml</descriptor>
-          </descriptors>
-          <finalName>geowebcache-1.6-SNAPSHOT</finalName>
-          <outputDirectory>${project.build.directory}/release</outputDirectory>
-        </configuration>
-      </plugin>
-
+ 
     </plugins>
   </reporting>
 
@@ -578,6 +562,22 @@
         </configuration>
       </plugin>
 
+     <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <!--descriptorRefs>
+            <descriptorRef>project</descriptorRef>
+          </descriptorRefs-->
+          <descriptors>
+            <descriptor>release/src.xml</descriptor>
+            <descriptor>release/war.xml</descriptor>
+            <descriptor>release/doc.xml</descriptor>
+          </descriptors>
+          <finalName>geowebcache-1.5-SNAPSHOT</finalName>
+          <outputDirectory>${project.build.directory}/release</outputDirectory>
+        </configuration>
+      </plugin>
     </plugins>
     
     <extensions>
