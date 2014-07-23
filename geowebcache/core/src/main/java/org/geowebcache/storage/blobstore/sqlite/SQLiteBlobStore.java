@@ -264,9 +264,12 @@ public class SQLiteBlobStore implements BlobStore {
 
 	/**
 	 * Delete tiles within a range.
+	 * @todo Integrate this with the functionality for 
 	 */
 	public boolean delete(TileRange trObj) throws StorageException {
-		throw new StorageException("Not implemented yet!");
+
+	    throw new StorageException("Not implemented yet!");
+
 		/*
 		 * int count = 0; final String layerName = trObj.getLayerName(); final
 		 * String gridSetId = trObj.getGridSetId(); final String blobFormat =
@@ -300,6 +303,7 @@ public class SQLiteBlobStore implements BlobStore {
 		 * 
 		 * log.info("Truncated " + count + " tiles");
 		 */
+
 	}
 
 	/**
@@ -403,6 +407,9 @@ public class SQLiteBlobStore implements BlobStore {
 	/**
 	 * @see org.geowebcache.storage.BlobStore#getLayerMetadata(java.lang.String,
 	 *      java.lang.String)
+	 *
+	 * @todo Raise/handle the exception resulting from the execution of the query
+	 *
 	 */
 	public String getLayerMetadata(final String layerName, final String key) {
 		Connection conn = null;
